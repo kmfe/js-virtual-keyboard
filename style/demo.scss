@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+
+}
+
+body {
+  font-size: 14px;
+}
+
+@import 'keyboard';
+
+/*
+  for demo
+*/
+[name='appleWatch'] {
+  border-radius: 3px;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 5px;
+  border: 1px solid #ccc;
+}
+
+h3 {
+  color: #cd0000;
+}
+
+.link-btn {
+  padding: 10px 20px;
+  background: lightseagreen;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.wrap {
+  position: relative;
+  line-height: 3;
+  margin: 0 auto;
+  //padding:10px;
+  overflow: hidden;
+
+  /* Prevent native touch events on Windows */
+  -ms-touch-action: none;
+  /* Prevent the callout on tap-hold and text selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  /* Prevent text resize on orientation change, useful for web-apps */
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -o-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+#scroller {
+  position: absolute;
+  padding: 10px;
+  /* Prevent elements to be highlighted on tap */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  /* Put the scroller into the HW Compositing layer right from the start */
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+#info {
+  padding: 20px;
+  border: 1px solid #cd0000;
+  min-height: 200px;
+  line-height: 2;
+  text-align: center;
+  [name='appleWatch']{
+    margin: 5px;
+  }
+}
+
+.toolbar {
+  margin: 10px auto;
+  text-align: center;
+  line-height: 1;
+  input[type=button] {
+    height: 40px;
+    padding: 0 10px;
+    -webkit-appearance: none;
+  }
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>with iFrame</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 0;
+            overflow: hidden;
+        }
+
+        iframe {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            font-size: 0;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        window.onload = window.onresize = function () {
+            document.getElementsByTagName('iframe')[0].height = window.innerHeight + 'px'
+        }
+    </script>
+</head>
+<body>
+<iframe src="index_iscroll.html" frameborder="0" scrolling="no"></iframe>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>custom keyboard</title>
+    <link rel="stylesheet" href="../style/demo.css">
+</head>
+<body style="height: 1200px;">
+<div class="wrap" id="wrap">
+    <div name="appleWatch" maxlength="5"></div>
+    <div name="appleWatch" maxlength="10">Da Ga Hao Ao</div>
+    <div name="appleWatch" isdisabled="true">Da Ga Hao Ao</div>
+
+    Lorem ipsum dolor sit amet. please input something1, please input something2
+    <div name="appleWatch">China</div>
+    <div>
+        <ul>
+            <li>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, sit.
+                <div name="appleWatch">please input something</div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="info">
+    <a href="index_iscroll.html" class="link-btn">go to demo with iscroll ? </a>
+    <div id="place">
+
+    </div>
+</div>
+
+
+<div class="toolbar">
+    <input type="button" value="add an element" id="add"/>
+    <input type="button" value="add an element width data" id="addData"/>
+    <button id="destory">Destory All</button>
+</div>
+<script src="../lib/jquery.min.js"></script>
+<script src="../script/keyboard.js"></script>
+<script>
+
+    /*
+    * just for demo
+    * */
+        
+    //prevent ios10 pinch to zoom 
+    if (/OS\s1[0-9]/i.test(navigator.userAgent)) preventWebpageScaling();
+
+    function preventWebpageScaling() {
+        // stop pinch-to-zoom
+        document.documentElement.addEventListener('touchstart', function (event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        }, false);
+
+        // Disabling double-tap-to-zoom
+        var lastTouchEnd = 0;
+        document.documentElement.addEventListener('touchend', function (event) {
+            var now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    }
+
+    $('div[name=appleWatch]').keyboard({
+        'debug': false,
+        //repeat: false
+    });
+
+    var $add = $('#add'),
+            $addData = $('#addData');
+
+    $add.on('touchstart', function () {
+        $('#place').append('<div name="appleWatch"></div>');
+        $.mockInputRefresh($('div[name=appleWatch]'));
+    });
+
+    $addData.on('touchstart', function () {
+        $('#place').append('<div name="appleWatch">had data before -------> </div>');
+        $.mockInputRefresh($('div[name=appleWatch]'));
+    });
+
+    $('#destory').on('touchstart', function () {
+        $.mockInputDestory();
+    });
+
+</script>
+</body>
+</html>

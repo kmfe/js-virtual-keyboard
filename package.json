@@ -1,0 +1,23 @@
+{
+  "name": "js-virtual-keyboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.englishtown.com:7999/etg/js-virtual-keyboard.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.17.5",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "iscroll": "^5.2.0",
+    "jquery": "^3.1.1",
+    "node-sass": "^3.13.0"
+  }
+}
