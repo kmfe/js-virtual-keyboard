@@ -13,14 +13,17 @@ gulp.task('sass', function () {
         .pipe(reload({stream: true}));
 });
 
-gulp.task('serve', ['sass'], function () {
+gulp.task('serve', gulp.series( gulp.parallel('sass'), function () {
     browserSync.init({
         server: {
             baseDir: ['./', './example' , './ipad-keyboard']
         }
     });
-    gulp.watch('./style/**/*.scss', ['sass']);
-    gulp.watch("./style/*.scss", ['sass']);
+    gulp.watch('./style/**/*.scss', gulp.task('sass'));
+    gulp.watch("./style/*.scss", gulp.task('sass'));
 
     gulp.watch("./example/*.html").on('change', reload);
-});
+}));
+
+gulp.task('default', gulp.series( gulp.parallel('serve'), function () {
+}));
